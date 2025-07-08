@@ -1,0 +1,27 @@
+/* Add cell numbers to Jupyter notebook */
+.cell {
+    counter-increment: cell-counter;
+}
+
+.cell:before {
+    content: "[" counter(cell-counter) "]";
+    position: absolute;
+    left: -40px;
+    top: 5px;
+    font-size: 11px;
+    color: #999;
+    font-family: monospace;
+}
+
+.container {
+    counter-reset: cell-counter;
+}
+
+/* Add line numbers to code cells */
+.CodeMirror-linenumber {
+    color: #999 !important;
+}
+
+.CodeMirror {
+    line-height: 1.4;
+} 
